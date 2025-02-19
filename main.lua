@@ -15,7 +15,7 @@ local function get_drive_name(drive)
 
     -- Parse the output to extract the drive name
     local output = output:sub(1, output:find("\r\n") - 1)
-    local drive_name = output:match("is%s*([^%s].*)$")
+    local drive_name = output:match(" Volume in drive %w is%s*([^%s].*)$")
 
     -- Return the drive name
     return drive_name, nil
