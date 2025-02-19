@@ -1,6 +1,6 @@
 # goto-drives.yazi
 
-A plugin for [yazi](https://github.com/sxyazi/yazi) to `cd` to the available windows drives from a fzf menu.
+A plugin for [yazi](https://github.com/sxyazi/yazi) to `cd` to the available windows drives from an fzf menu.
 
 ## Dependencies
 - [fzf](https://github.com/junegunn/fzf)
@@ -18,6 +18,6 @@ Add this to your `keymap.toml`:
 ```toml
 [manager]
 prepend_keymap = [
-  { on = [ "g", ":" ], run  = "plugin goto-drives", desc = "Goto drives" },
+  { on = [ "g", ":" ], run  = "plugin goto-drives", desc = "Go to drives" },
 ]
 ```
