@@ -23,7 +23,8 @@ return {
         end
 
         local permit = ya.hide()
-        local child = Command("fzf"):stdout(Command.PIPED):stdin(Command.PIPED):spawn()
+        local child = Command("fzf"):args({ "--prompt", "Choose a drive: " }):stdout(Command.PIPED):stdin(Command.PIPED)
+            :spawn()
 
         child:write_all(table.concat(drives, "\n"))
         child:flush()
