@@ -4,18 +4,18 @@ local function directory_exists(path)
 end
 
 local function get_drive_name(drive)
-    -- with Command():output() it errors saying the command doesn't exist
-    local handle = io.popen("vol " .. drive)
-    local output = handle:read("*a")
-    handle:close()
+    local output, err = Command("cmd")
+        :args({ "/c", "vol", drive })
+        :output()
 
     if not output then
         return nil, "Failed to execute vol command"
     end
+    local output = output.stdout
 
     -- Parse the output to extract the drive name
-    local output = output:sub(1, output:find("\n") - 1)
-    local drive_name = output:match("is%s*([^%s][^%n]*)")
+    local output = output:sub(1, output:find("\r\n") - 1)
+    local drive_name = output:match("is%s*([^%s].*)$")
 
     -- Return the drive name
     return drive_name, nil
