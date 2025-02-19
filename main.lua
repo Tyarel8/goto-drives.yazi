@@ -1,5 +1,5 @@
 local function directory_exists(path)
-    local files, err = fs.read_dir(Url(path), { limit = 1 })
+    local files, err = fs.read_dir(Url(path), { limit = 0 })
     return files ~= nil
 end
 
