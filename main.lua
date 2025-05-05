@@ -62,7 +62,7 @@ return {
         permit:drop()
 
         if output.stdout ~= "" then
-            ya.manager_emit("cd", { drives[output.stdout:gsub("%s+$", "")] })
+            ya.mgr_emit("cd", { drives[output.stdout:gsub("%s+$", "")] })
         end
     end,
 }
