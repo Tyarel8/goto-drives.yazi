@@ -8,7 +8,7 @@ A plugin for [yazi](https://github.com/sxyazi/yazi) to `cd` to the available win
 ## Installation
 
 ```sh
-ya pack -a 'Tyarel8/goto-drives'
+ya pkg add 'Tyarel8/goto-drives'
 ```
 
 ## Usage
