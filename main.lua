@@ -5,7 +5,7 @@ end
 
 local function get_drive_name(drive)
     local output, err = Command("cmd")
-        :args({ "/c", "vol", drive })
+        :arg { "/c", "vol", drive }
         :output()
 
     if not output then
@@ -51,7 +51,7 @@ return {
 
         local permit = ya.hide()
         local child = Command("fzf")
-            :args({ "--prompt", "Choose a drive: ", "--preview", "" })
+            :arg { "--prompt", "Choose a drive: ", "--preview", "" }
             :stdout(Command.PIPED):stdin(Command.PIPED)
             :spawn()
 
