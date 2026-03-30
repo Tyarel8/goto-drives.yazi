@@ -49,7 +49,7 @@ return {
             end
         end
 
-        local permit = ya.hide()
+        local permit = ui.hide()
         local child = Command("fzf")
             :arg { "--prompt", "Choose a drive: ", "--preview", "" }
             :stdout(Command.PIPED):stdin(Command.PIPED)
@@ -62,7 +62,7 @@ return {
         permit:drop()
 
         if output.stdout ~= "" then
-            ya.mgr_emit("cd", { drives[output.stdout:gsub("%s+$", "")] })
+            ya.emit("cd", { drives[output.stdout:gsub("%s+$", "")] })
         end
     end,
 }
