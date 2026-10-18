@@ -5,7 +5,10 @@
 > You can drop it and bind the drives view directly instead:
 >
 > ```toml
-> { on = [ "g", ":" ], run = "cd place://host//", desc = "Go to drives" }
+> [manager]
+> prepend_keymap = [
+>   { on = [ "g", ":" ], run = "cd place://host//", desc = "Go to drives" },
+> ]
 > ```
 
 A plugin for [yazi](https://github.com/sxyazi/yazi) to `cd` to the available windows drives from an fzf menu.
